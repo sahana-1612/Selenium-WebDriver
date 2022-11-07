@@ -1,0 +1,37 @@
+package getMethods;
+
+
+
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+
+public class Dropdown {
+
+	public static void main(String[] args) throws InterruptedException {
+		System.setProperty("Webdriver.chrome.driver", "/Users/sahana/Downloads/chromedriver");
+		WebDriver driver = new ChromeDriver();
+		driver.get("https://www.sugarcrm.com/au/request-demo/");
+		WebElement dropDown =driver.findElement(By.name("awareness_source_c"));
+		
+		Select select = new Select(dropDown);
+		select.selectByValue("Podcast");
+		Thread.sleep(2000);
+		select.selectByIndex(5);
+		Thread.sleep(2000);
+		select.selectByVisibleText("YouTube");
+		Thread.sleep(2000);
+		System.out.print("No of options present in the dropdown:" + select.getOptions().size());
+		List <WebElement> options=select.getOptions(); // Multiple we element to store in list 
+		for(WebElement e:options);
+		{
+		   System.out.println(e.getText());
+		}
+			
+	}
+
+}

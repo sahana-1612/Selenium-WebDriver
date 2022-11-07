@@ -1,0 +1,36 @@
+package Selenium;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Browserlaunch {
+
+	public static void main(String[] args) {
+		System.setProperty("webdriver.chrome.driver", "/Users/sahana/Downloads/chromedriver");
+        WebDriver driver = new ChromeDriver(); // launch the chrome browser or  chromeDriver driver = new ChromeDriver();
+        //open the URL
+        driver.get("https://opensource-demo.orangehrmlive.com");
+        //Enter the user name
+        driver.findElement(By.xpath("//input[@placeholder='Username']")).sendKeys("Admin");
+        //Enter the password
+        driver.findElement(By.xpath("//input[@placeholder=\"Password\"]")).sendKeys("admin123");
+        //Click on loginbutton
+        driver.findElement(By.xpath("//button[text()=' Login ']")).click();
+        //title page
+       String act_title = driver.getTitle(); // current title 
+       String exp_title = "OrangeHRM"; // Expected title
+       if (act_title.equals(exp_title))
+       {
+    	   System.out.println("Test is pass");
+       }
+       else
+          {
+    		   System.out.println("Test is fail");
+    	   }
+       // close browser
+       driver.close();
+       }
+
+}
+

@@ -1,0 +1,26 @@
+package getMethods;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+public class WaitCommand {
+
+	public static void main(String[] args) throws InterruptedException {
+		System.setProperty("WebDriver.chrome.driver", "");
+		//WebDriver driver = new ChromeDriver();
+		//driver.manage().timeouts().implicitlyWait(5.TimeUnit.SECONDS);  // implicit wait
+		
+		//WebDriverWait mywait = new WebDriverWait(driver, 10000);
+		//driver.get("https://demo.guru99.com/selenium/newtours/");
+		// Thread.sleep(2000);
+	//	driver.get("https://demo.guru99.com/selenium/newtours/");
+		//driver.findElement(By.xpath("//input[@name=\"userName\"]")).sendKeys("User name");
+   // WebElement username = mywait.untill(ExpectedConditions.visiablityofElementLocation(By.name("User name")));
+	
+
+}
+}

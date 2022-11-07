@@ -1,0 +1,24 @@
+package getMethods;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Volenteersignup {
+
+	public static void main(String[] args) {
+		System.setProperty("Webdriver.chrome.driver", "/Users/sahana/Downloads/chromedriver");
+		WebDriver driver = new ChromeDriver();
+
+		driver.get("https://demo.guru99.com/test/newtours/"); // Open the url on the browser
+		String title = driver.getTitle(); // return the title of the page
+		driver.manage().window().maximize();
+		
+		System.out.println("This of tha page is:" + title);
+		String url = driver.getCurrentUrl(); // return the URL of the page
+		System.out.println("This return the current url:" + url);
+		
+        System.out.println(driver.getPageSource()); // Return all the HTMl source code of the page 
+       
+	}
+
+}

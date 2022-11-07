@@ -1,0 +1,21 @@
+package getMethods;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class AlretsOrPopUP {
+
+	public static void main(String[] args) throws InterruptedException {
+		System.setProperty("WebDriver.chrome.driver", "");
+		WebDriver driver = new ChromeDriver();
+		driver.get("https://mail.rediff.com/cgi-bin/login.cgi");
+		driver.manage().window().maximize();
+		driver.findElement(By.name("name=\"proceed\"")).click();
+		driver.switchTo().alert().accept(); //Close the popup by using ok button
+		Thread.sleep(3000);
+		driver.switchTo().alert().dismiss(); // Close the popup by using Cancel button
+
+	}
+
+}

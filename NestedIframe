@@ -1,0 +1,31 @@
+package getMethods;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class NestedIframe {
+
+	public static void main(String[] args) {
+		System.setProperty("WebDriver.chrome.driver", "");
+		WebDriver driver = new ChromeDriver();
+		driver.get("https://www.w3schools.com/tags/tryit.asp?filename=tryhtml_iframe");
+		driver.manage().window().maximize();
+		System.out.println("Switching to 1st iFrame start");
+        driver.switchTo().frame("iframeResult");
+        System.out.println("Switching to 1st iFrame end");
+ 
+        System.out.println("Switching to 2nd iFrame has start");
+        driver.switchTo().frame(driver.findElement(By.xpath("//*[@title='W3Schools Free Online Web Tutorials']")));
+        System.out.println("Switching to 2nd iFrame has end");
+ 
+ 
+        WebElement login = driver.findElement(By.id("w3loginbtn"));
+        System.out.println("Click login button has start");
+        login.click();
+        System.out.println("Click login button has end");
+        driver.close();
+	}
+
+}

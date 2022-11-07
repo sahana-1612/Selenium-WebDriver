@@ -1,0 +1,25 @@
+package getMethods;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class CheckBox {
+
+	public static void main(String[] args) {
+		System.setProperty("WebDriver.chrome.driver", "");
+		WebDriver driver = new ChromeDriver();
+		driver.get("https://www.ironspider.ca/forms/checkradio.htm");
+		  WebElement checkbox =    driver.findElement(By.xpath("//input[text()='Red']"));
+		   System.out.println(checkbox.isDisplayed());
+		   System.out.println(checkbox.isEnabled());
+		   System.out.println(checkbox.isSelected());
+		   checkbox.click();
+		   System.out.println(checkbox.isDisplayed());
+		   System.out.println(checkbox.isEnabled());
+		   System.out.println(checkbox.isSelected());
+		   
+	}   
+
+}

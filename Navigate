@@ -1,0 +1,23 @@
+package getMethods;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Navigation {
+
+	public static void main(String[] args) {
+		System.setProperty("WebDriver.chrome.driver", "");
+		WebDriver driver = new ChromeDriver();
+		driver.get("https://demo.guru99.com/test/newtours/");
+		
+		driver.findElement(By.xpath("//a[text()='REGISTER']")).click();
+		driver.navigate().back();// Go back to pervious page
+		
+		driver.findElement(By.xpath("//a[text()='REGISTER']")).click();
+		driver.navigate().forward();
+		
+		driver.navigate().refresh();
+	}
+
+}

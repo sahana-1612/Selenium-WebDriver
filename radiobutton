@@ -1,0 +1,25 @@
+package getMethods;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class RadioButton {
+
+	public static void main(String[] args) {
+		System.setProperty("Webdriver.chrome.driver", "/Users/sahana/Downloads/chromedriver");
+		WebDriver driver = new ChromeDriver();
+		// conditional commands
+		driver.get("https://materializecss.com/radio-buttons.html");
+		 WebElement radio =  driver.findElement(By.xpath("//span[text()='Red']"));
+		 System.out.println(radio.isDisplayed());  
+		 System.out.println(radio.isEnabled());
+		 System.out.println(radio.isSelected());
+		 radio.click();
+		 System.out.println(radio.isDisplayed());  
+		 System.out.println(radio.isEnabled());
+		 System.out.println(radio.isSelected());
+	}
+
+}

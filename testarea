@@ -1,0 +1,16 @@
+package getMethods;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class testArea {
+
+	public static void main(String[] args) {
+		System.getProperty("WebDriver.Chrome.driver", "/Users/sahana/Downloads/chromedriver");
+		WebDriver driver = new ChromeDriver();
+		driver.get("https://www.javatpoint.com/html-textarea");
+		driver.findElement(By.xpath("//tbody/tr[1]/td[1]/textarea[1]")).sendKeys("JavaTpoint for leaning the java");
+	}
+
+}
